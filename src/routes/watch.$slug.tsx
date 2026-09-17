@@ -35,6 +35,7 @@ function WatchPage() {
   const film = getFilm(slug);
 
   const trailer = useServerFn(fetchTrailer);
+  const navigate = useNavigate();
 
   const [src, setSrc] = useState<string | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "locked">("loading");
