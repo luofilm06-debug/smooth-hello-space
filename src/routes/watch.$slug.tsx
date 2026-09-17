@@ -40,7 +40,7 @@ function WatchPage() {
   const [state, setState] = useState<"loading" | "ready" | "locked">("loading");
   const [payOpen, setPayOpen] = useState(false);
   const [trailerOpen, setTrailerOpen] = useState(false);
-  const [reload, setReload] = useState(0);
+
 
   useEffect(() => {
     let cancelled = false;
@@ -64,7 +64,7 @@ function WatchPage() {
     return () => {
       cancelled = true;
     };
-  }, [slug, kind, reload]);
+  }, [slug, kind]);
 
   return (
     <main>
