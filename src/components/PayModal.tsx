@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 
 import { payForFilm } from "@/lib/streaming.functions";
@@ -17,13 +17,13 @@ export function PayModal({
   open,
   slug,
   title,
-  onClose,
+  onBack,
   onPaid,
 }: {
   open: boolean;
   slug: string;
   title?: string | undefined;
-  onClose: () => void;
+  onBack: () => void;
   onPaid: (url: string) => void;
 }) {
   const [method, setMethod] = useState<Method>("card");
@@ -41,7 +41,6 @@ export function PayModal({
       const result = await pay({ data: { slug, method } });
       if (result.ok) {
         onPaid(result.source.url);
-        onClose();
       } else {
         setError("Payment could not be completed. Please try again.");
       }
@@ -57,8 +56,8 @@ export function PayModal({
       <div className="pay-modal">
         <div className="pay-modal-head">
           <h2>Pay to watch</h2>
-          <button type="button" className="pay-close" onClick={onClose} aria-label="Close">
-            <X size={18} />
+          <button type="button" className="pay-close" onClick={onBack}>
+            <ArrowLeft size={16} /> Go back
           </button>
         </div>
 
