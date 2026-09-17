@@ -349,13 +349,10 @@ function Index() {
       <section className="gallery-section" id="gallery" aria-labelledby="gallery-title">
         <p className="eyebrow">In pictures</p>
         <h2 id="gallery-title">Gallery</h2>
-        <div className="gallery-grid">
-          {gallery.map((item) => (
-            <figure className="gallery-item" key={item.src}>
-              <img src={item.src} alt={item.alt} loading="lazy" />
-            </figure>
-          ))}
-        </div>
+        <p className="awards-text">
+          Behind-the-scenes moments, film stills and production photography.
+        </p>
+        <Link className="button button-dark" to="/gallery">View the gallery</Link>
       </section>
 
       <section className="awards-section" id="media" aria-labelledby="media-title">
