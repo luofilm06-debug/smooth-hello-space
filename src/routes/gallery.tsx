@@ -92,7 +92,7 @@ function GalleryPage() {
       <section className="gallery-page-grid" aria-label="All gallery pictures">
         {gallery.map((item, index) => (
           <figure className="gallery-page-item" key={`${item.src}-${index}`}>
-            <img src={item.src} alt={item.alt} loading={index < 8 ? "eager" : "lazy"} />
+            <img src={item.src} alt={item.alt} loading={index < 12 ? "eager" : "lazy"} decoding="async" />
             <figcaption>{item.title}</figcaption>
           </figure>
         ))}

@@ -177,7 +177,7 @@ function ProjectCard({
       }}
     >
       <span className="project-thumb">
-        <img src={project.image} alt={`${project.name} — ${project.type}`} width={900} height={506} loading="lazy" />
+        <img src={project.image} alt={`${project.name} — ${project.type}`} width={900} height={506} loading="lazy" decoding="async" />
         <span className="project-overlay">
           <span className="project-actions">
             <span
@@ -310,7 +310,7 @@ function Index() {
                     alt={`${project.name} — upcoming film still`}
                     width={900}
                     height={506}
-                    loading="lazy"
+                    loading="lazy" decoding="async"
                   />
                   <span className="upcoming-status">{project.status}</span>
                   <a className="upcoming-details" href="#contact">Details</a>
@@ -361,7 +361,7 @@ function Index() {
         </p>
         <div className="home-photo-strip home-photo-strip-portrait" aria-hidden="true">
           {galleryPreview.map((photo) => (
-            <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
+            <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
           ))}
         </div>
         <Link className="button button-dark" to="/gallery">Open full gallery</Link>
@@ -376,7 +376,7 @@ function Index() {
         <div className="media-grid">
           {mediaCards.map((card) => (
             <article className="media-card" key={card.title}>
-              <img src={card.src} alt={card.alt} loading="lazy" />
+              <img src={card.src} alt={card.alt} loading="lazy" decoding="async" />
               <span className="media-card-overlay">
                 <span className="media-card-meta">{card.meta}</span>
                 <strong className="media-card-title">{card.title}</strong>

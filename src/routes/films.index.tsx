@@ -64,7 +64,7 @@ function FilmsPage() {
                   alt={`${film.name} film still`}
                   width={900}
                   height={506}
-                  loading="lazy"
+                  loading="eager" decoding="async"
                 />
                 <span className="film-item-play"><Play size={18} /></span>
               </Link>
@@ -95,7 +95,7 @@ function FilmsPage() {
                   alt={`${film.name} film still`}
                   width={900}
                   height={506}
-                  loading="lazy"
+                  loading="eager" decoding="async"
                 />
                 {film.status && <span className="upcoming-status">{film.status}</span>}
               </Link>
