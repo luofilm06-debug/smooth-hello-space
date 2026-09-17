@@ -72,24 +72,18 @@ function WatchPage() {
     <main>
       <SiteHeader />
       <section className="watch-page">
-        <Link className="film-back" to="/films/$slug" params={{ slug }}>
-          <ArrowLeft size={15} /> Back to film
-        </Link>
-        <h1>
-          {film?.name ?? "Film"}
-          {kind === "trailer" ? " — Trailer" : ""}
-        </h1>
-
-        {state === "loading" && <p className="watch-note">Preparing secure playback…</p>}
-
-        {state === "ready" && src && (
+        {state === "ready" && src ? (
           <Suspense fallback={<p className="watch-note">Loading player…</p>}>
             <ShakaPlayer src={src} poster={film?.image} title={film?.name} />
           </Suspense>
-        )}
-
-        {state === "locked" && (
-          <p className="watch-note">This film is paid — complete the floating checkout to watch.</p>
+        ) : (
+          <div className="watch-locked-player">
+            {film?.image && <img src={film.image} alt="" />}
+            <div className="watch-locked-veil">
+              <Lock size={26} />
+              <span>{state === "loading" ? "Preparing secure playback…" : film?.name ?? "Film"}</span>
+            </div>
+          </div>
         )}
       </section>
 
@@ -97,10 +91,11 @@ function WatchPage() {
         open={payOpen}
         slug={slug}
         title={film?.name}
-        onClose={() => setPayOpen(false)}
+        onBack={() => navigate({ to: "/films/$slug", params: { slug } })}
         onPaid={(url) => {
           setSrc(url);
           setState("ready");
+          setPayOpen(false);
         }}
       />
       <SiteFooter />
