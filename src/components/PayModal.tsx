@@ -7,8 +7,8 @@ import { payForFilm } from "@/lib/streaming.functions";
 type Method = "mobile_money" | "card" | "paypal" | "google_pay";
 
 const METHODS: { id: Method; label: string; currency: string; logos: string[] }[] = [
-  { id: "mobile_money", label: "Mobile Money (MTN / Airtel)", currency: "UGX", logos: ["MTN", "Airtel"] },
-  { id: "card", label: "Credit/debit card", currency: "USD", logos: ["VISA", "MC"] },
+  { id: "mobile_money", label: "Mobile Money", currency: "UGX", logos: ["MTN", "Airtel"] },
+  { id: "card", label: "Card", currency: "USD", logos: ["VISA", "MC"] },
   { id: "paypal", label: "PayPal", currency: "USD", logos: ["PayPal"] },
   { id: "google_pay", label: "Google Pay", currency: "USD", logos: ["GPay"] },
 ];
