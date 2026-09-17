@@ -228,11 +228,11 @@ footer > p:last-child { justify-self: end; }
   .awards-section { padding: 44px 20px 50px; }
   .awards-section .button { margin-top: 18px; min-height: 30px; padding: 0 14px; font-size: 7.5px; min-width: 0; }
   .contact-section { min-height: 300px; padding: 46px 20px; }
-  .services-intro { padding: 40px 20px 6px; }
-  .services-intro h2 { font-size: 19px; }
-  .services-lede { font-size: 9.5px; line-height: 1.65; }
-  .services-tags { font-size: 8px; }
-  .services-intro .button { margin-top: 16px; min-height: 30px; padding: 0 14px; font-size: 7.5px; }
+  .services-intro { padding: 64px 22px 10px; }
+  .services-intro h2 { font-size: 30px; }
+  .services-lede { font-size: 15px; line-height: 1.75; }
+  .services-tags { font-size: 11px; }
+  .services-intro .button { margin-top: 24px; min-height: 44px; padding: 0 20px; font-size: 12px; }
   .awards-text { margin-top: 16px; font-size: 9.5px; line-height: 1.7; }
   .contact-lede { font-size: 9.5px; }
   .about-image { height: 240px; border-radius: 10px; background: transparent; }
