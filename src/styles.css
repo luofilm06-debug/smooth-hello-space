@@ -151,9 +151,9 @@ img { display: block; max-width: 100%; }
 .upcoming-date { font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted-foreground); white-space: nowrap; }
 .upcoming-details { position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 0 14px; border-radius: 999px; font-size: 9px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #fff; background: #0e9fe0; white-space: nowrap; }
 
-.awards-section { padding: 66px clamp(24px, 5.2vw, 78px) 74px; background: var(--card); }
+.awards-section { padding: 66px clamp(24px, 5.2vw, 78px) 74px; background: var(--card); text-align: center; }
 .awards-section h2 { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(26px, 3vw, 40px); font-weight: 500; letter-spacing: -0.01em; }
-.awards-text { max-width: 720px; margin: 22px 0 0; color: var(--muted-foreground); font-size: 13px; line-height: 1.85; }
+.awards-text { max-width: 720px; margin: 22px auto 0; color: var(--muted-foreground); font-size: 13px; line-height: 1.85; }
 .awards-section .button { margin-top: 30px; min-width: 190px; }
 
 .contact-section { min-height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--primary-foreground); background: var(--primary); background-image: linear-gradient(rgba(12, 12, 14, 0.72), rgba(12, 12, 14, 0.72)), var(--contact-bg, none); background-size: cover; background-position: center 18%; text-align: center; }
@@ -429,7 +429,7 @@ footer > p:last-child { justify-self: end; }
 
 
 
-.gallery-section { padding: 66px clamp(24px, 5.2vw, 78px) 74px; background: var(--background); }
+.gallery-section { padding: 66px clamp(24px, 5.2vw, 78px) 74px; background: var(--background); text-align: center; }
 .gallery-section h2 { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(26px, 3vw, 40px); font-weight: 500; letter-spacing: -0.01em; }
 .gallery-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
 .gallery-item { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); background: var(--muted); }
