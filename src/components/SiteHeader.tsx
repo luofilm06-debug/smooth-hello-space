@@ -1,5 +1,6 @@
-import { Link, useNavigate } from "@tanstack/react-router";
-import { Menu } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
@@ -15,14 +16,14 @@ export function Brand() {
   );
 }
 
-function NavLinks() {
+function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <>
-      <Link to="/">Home</Link>
-      <Link to="/films">Movies</Link>
-      <Link to="/gallery">Gallery</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
+      <Link to="/" onClick={onNavigate}>Home</Link>
+      <Link to="/films" onClick={onNavigate}>Movies</Link>
+      <Link to="/gallery" onClick={onNavigate}>Gallery</Link>
+      <Link to="/about" onClick={onNavigate}>About</Link>
+      <Link to="/contact" onClick={onNavigate}>Contact</Link>
     </>
   );
 }
@@ -30,6 +31,19 @@ function NavLinks() {
 export function SiteHeader() {
   const { session } = useAuth();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   async function signOut() {
     await supabase.auth.signOut();
@@ -47,12 +61,20 @@ export function SiteHeader() {
           Sign out
         </button>
       ) : null}
-      <details className="mobile-nav">
-        <summary aria-label="Open menu"><Menu size={22} /></summary>
+      <button
+        type="button"
+        className={`nav-toggle${menuOpen ? " open" : ""}`}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((v) => !v)}
+      >
+        {menuOpen ? <X size={22} /> : <Menu size={22} />}
+      </button>
+      <div className={`mobile-menu${menuOpen ? " open" : ""}`} aria-hidden={!menuOpen}>
         <nav aria-label="Mobile navigation">
-          <NavLinks />
+          <NavLinks onNavigate={() => setMenuOpen(false)} />
         </nav>
-      </details>
+      </div>
     </header>
   );
 }
