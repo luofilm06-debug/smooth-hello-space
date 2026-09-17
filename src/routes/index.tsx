@@ -19,7 +19,6 @@ import hassanImage from "@/assets/hassan-mageye.png.asset.json";
 import upcomingSilence from "@/assets/silence-we-flee.png.asset.json";
 import upcomingBullock from "@/assets/john-bullock.png.asset.json";
 import upcomingModernRoad from "@/assets/modern-road.png.asset.json";
-import directorHero from "@/assets/director-hero-2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
