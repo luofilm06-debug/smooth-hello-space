@@ -426,10 +426,8 @@ footer > p:last-child { justify-self: end; }
 .cover-menu a { display: inline-flex; align-items: center; min-height: 38px; padding: 0 18px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; backdrop-filter: blur(6px); background: rgba(255,255,255,.07); transition: background .25s ease, transform .25s ease; }
 .cover-menu a:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
 
-.home-about { padding: 66px clamp(24px, 5.2vw, 78px) 72px; background: var(--card); }
-.home-about h2 { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(26px, 3vw, 40px); font-weight: 500; letter-spacing: -0.01em; }
-.home-about-text { max-width: 720px; margin: 22px 0 0; color: var(--muted-foreground); font-size: 13px; line-height: 1.85; }
-.home-about .button { margin-top: 28px; min-width: 190px; }
+
+
 
 .gallery-section { padding: 66px clamp(24px, 5.2vw, 78px) 74px; background: var(--background); }
 .gallery-section h2 { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(26px, 3vw, 40px); font-weight: 500; letter-spacing: -0.01em; }
