@@ -194,6 +194,7 @@ footer > p:last-child { justify-self: end; }
   .hero-intro br { display: none; }
   .hero-actions { flex-wrap: nowrap; gap: 7px; margin-top: 16px; }
   .hero-actions .button { min-width: 0; flex: 0 1 auto; padding: 0 10px; min-height: 30px; font-size: 7px; letter-spacing: .02em; white-space: nowrap; }
+  .hero-actions .button:nth-child(2) { display: none; }
   .services { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: calc((100% - 2 * 12px) / 2.2); gap: 0; padding: 18px 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .services::-webkit-scrollbar { display: none; }
   .service, .service:first-child { min-height: 0; padding: 20px 14px; scroll-snap-align: start; }
