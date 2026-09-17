@@ -217,7 +217,6 @@ function ProjectCard({
 function Index() {
   const projectRailRef = useRef<HTMLDivElement>(null);
   const upcomingRailRef = useRef<HTMLDivElement>(null);
-  const mediaRailRef = useRef<HTMLDivElement>(null);
   const [activeFilm, setActiveFilm] = useState<number | null>(null);
   const [trailerSlug, setTrailerSlug] = useState<string | null>(null);
 
