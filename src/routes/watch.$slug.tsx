@@ -1,11 +1,11 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, Lock } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 import { SiteFooter, SiteHeader } from "@/components/SiteHeader";
-import { PlayerModal } from "@/components/PlayerModal";
+
 import { PayModal } from "@/components/PayModal";
 import { getFilm } from "@/lib/films";
 import { fetchTrailer } from "@/lib/streaming.functions";
@@ -39,7 +39,6 @@ function WatchPage() {
   const [src, setSrc] = useState<string | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "locked">("loading");
   const [payOpen, setPayOpen] = useState(false);
-  const [trailerOpen, setTrailerOpen] = useState(false);
 
 
   useEffect(() => {
@@ -55,7 +54,10 @@ function WatchPage() {
         return;
       }
 
-      if (!cancelled) setState("locked");
+      if (!cancelled) {
+        setState("locked");
+        setPayOpen(true);
+      }
     }
 
     setState("loading");
@@ -87,32 +89,9 @@ function WatchPage() {
         )}
 
         {state === "locked" && (
-          <div className="watch-gate">
-            <Lock size={22} />
-            <h2>Pay to watch</h2>
-            <p>USD 5.99 for this film. No account needed. Trailers stay free.</p>
-            <div className="watch-gate-actions">
-              <button className="pay-button" type="button" onClick={() => setPayOpen(true)}>
-                Pay to watch
-              </button>
-              <button
-                className="film-btn film-btn-ghost"
-                type="button"
-                onClick={() => setTrailerOpen(true)}
-              >
-                Watch trailer free
-              </button>
-            </div>
-          </div>
+          <p className="watch-note">This film is paid — complete the floating checkout to watch.</p>
         )}
       </section>
-
-      <PlayerModal
-        slug={trailerOpen ? slug : null}
-        title={film?.name}
-        poster={film?.image}
-        onClose={() => setTrailerOpen(false)}
-      />
 
       <PayModal
         open={payOpen}
