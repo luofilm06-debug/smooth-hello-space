@@ -22,7 +22,7 @@ export function PayModal({
 }: {
   open: boolean;
   slug: string;
-  title?: string;
+  title?: string | undefined;
   onClose: () => void;
   onPaid: (url: string) => void;
 }) {
