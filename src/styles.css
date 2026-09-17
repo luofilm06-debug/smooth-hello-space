@@ -415,8 +415,24 @@ footer > p:last-child { justify-self: end; }
 .pay-error { color: #dc2626; font-size: .82rem; margin-top: 10px; }
 .pay-fineprint { font-size: .76rem; color: #6b7280; line-height: 1.5; margin-top: 12px; }
 @media (max-width: 720px) {
-  .pay-modal-body { grid-template-columns: 1fr; }
-  .pay-modal-head h2 { font-size: 1.1rem; }
+  .pay-overlay { padding: 12px; align-items: flex-end; }
+  .pay-modal { max-width: 480px; border-radius: 18px; max-height: 94vh; }
+  .pay-modal-head { padding: 18px 20px 12px; }
+  .pay-modal-head h2 { font-size: 1.18rem; }
+  .pay-modal-body { grid-template-columns: 1fr; gap: 16px; padding: 14px 20px 22px; }
+  .pay-label { margin-bottom: 8px; }
+  .pay-methods { display: block; }
+  .pay-method { flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; padding: 10px 6px; margin-bottom: 0; border-radius: 9px; }
+  .pay-method input { position: absolute; opacity: 0; pointer-events: none; }
+  .pay-method-name { flex: none; font-size: .72rem; color: #374151; }
+  .pay-currency { display: none; }
+  .pay-method { position: relative; }
+  .pay-methods .pay-method { float: none; }
+  .pay-methods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .pay-methods .pay-label, .pay-methods .pay-note { grid-column: 1 / -1; }
+  .pay-note { margin-top: 10px; }
+  .pay-summary { padding: 14px 16px; }
+  .pay-button { padding: 14px; }
 }
 
 /* Home cover + new home sections */
