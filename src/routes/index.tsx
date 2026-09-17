@@ -116,29 +116,30 @@ const galleryPreview = [
   { src: upcomingSilence.url, alt: "The Silence We Flee — still" },
 ];
 
-const mediaPreview = [
-  { src: mediaEvent, alt: "Event and festival coverage" },
-  { src: mediaWalk.url, alt: "Behind the scenes — a walking shot" },
-  { src: mediaGalz.url, alt: "Galz About — film still" },
-  { src: mediaBanner, alt: "Mageye films banner" },
-];
-
-const awards = [
+const mediaCards = [
   {
+    src: mediaEvent,
+    alt: "Best Film in an Indigenous Language — Uganda Film Festival",
+    meta: "Uganda Film Festival · 2025",
     title: "Best Film in an Indigenous Language",
-    detail: "2025 Uganda Film Festival",
   },
   {
+    src: mediaWalk.url,
+    alt: "Special Mention — Mashariki African Film Festival",
+    meta: "Mashariki African Film Festival · 2025",
     title: "Special Mention",
-    detail: "2025 Mashariki African Film Festival",
   },
   {
+    src: mediaGalz.url,
+    alt: "Official selection — Silicon Valley African Film Festival",
+    meta: "Silicon Valley African Film Festival",
     title: "Official selection",
-    detail: "Silicon Valley African Film Festival",
   },
   {
+    src: mediaBanner,
+    alt: "Uganda's official submission — 98th Academy Awards",
+    meta: "98th Academy Awards",
     title: "Uganda's official submission",
-    detail: "98th Academy Awards, Best International Feature Film",
   },
 ];
 
@@ -216,7 +217,6 @@ function ProjectCard({
 function Index() {
   const projectRailRef = useRef<HTMLDivElement>(null);
   const upcomingRailRef = useRef<HTMLDivElement>(null);
-  const mediaRailRef = useRef<HTMLDivElement>(null);
   const [activeFilm, setActiveFilm] = useState<number | null>(null);
   const [trailerSlug, setTrailerSlug] = useState<string | null>(null);
 
@@ -373,24 +373,14 @@ function Index() {
         <p className="awards-text">
           Awards and winnings from festivals across Africa and the United States.
         </p>
-        <div className="media-carousel">
-          <button className="carousel-arrow carousel-arrow-left" type="button" aria-label="Previous media photos" onClick={() => scrollRail(mediaRailRef.current, -1)}>
-            <ChevronLeft size={20} />
-          </button>
-          <div className="home-photo-strip home-photo-strip-wide" ref={mediaRailRef} aria-hidden="true">
-            {mediaPreview.map((photo) => (
-              <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
-            ))}
-          </div>
-          <button className="carousel-arrow carousel-arrow-right" type="button" aria-label="Next media photos" onClick={() => scrollRail(mediaRailRef.current, 1)}>
-            <ChevronRight size={20} />
-          </button>
-        </div>
-        <div className="awards-grid">
-          {awards.map((award) => (
-            <article className="award-card" key={award.title}>
-              <strong>{award.title}</strong>
-              <span>{award.detail}</span>
+        <div className="media-grid">
+          {mediaCards.map((card) => (
+            <article className="media-card" key={card.title}>
+              <img src={card.src} alt={card.alt} loading="lazy" />
+              <span className="media-card-overlay">
+                <span className="media-card-meta">{card.meta}</span>
+                <strong className="media-card-title">{card.title}</strong>
+              </span>
             </article>
           ))}
         </div>
