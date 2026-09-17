@@ -374,24 +374,14 @@ function Index() {
         <p className="awards-text">
           Awards and winnings from festivals across Africa and the United States.
         </p>
-        <div className="media-carousel">
-          <button className="carousel-arrow carousel-arrow-left" type="button" aria-label="Previous media photos" onClick={() => scrollRail(mediaRailRef.current, -1)}>
-            <ChevronLeft size={20} />
-          </button>
-          <div className="home-photo-strip home-photo-strip-wide" ref={mediaRailRef} aria-hidden="true">
-            {mediaPreview.map((photo) => (
-              <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
-            ))}
-          </div>
-          <button className="carousel-arrow carousel-arrow-right" type="button" aria-label="Next media photos" onClick={() => scrollRail(mediaRailRef.current, 1)}>
-            <ChevronRight size={20} />
-          </button>
-        </div>
-        <div className="awards-grid">
-          {awards.map((award) => (
-            <article className="award-card" key={award.title}>
-              <strong>{award.title}</strong>
-              <span>{award.detail}</span>
+        <div className="media-grid">
+          {mediaCards.map((card) => (
+            <article className="media-card" key={card.title}>
+              <img src={card.src} alt={card.alt} loading="lazy" />
+              <span className="media-card-overlay">
+                <span className="media-card-meta">{card.meta}</span>
+                <strong className="media-card-title">{card.title}</strong>
+              </span>
             </article>
           ))}
         </div>
