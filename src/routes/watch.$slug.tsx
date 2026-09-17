@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, Lock } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
@@ -39,7 +39,6 @@ function WatchPage() {
   const [src, setSrc] = useState<string | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "locked">("loading");
   const [payOpen, setPayOpen] = useState(false);
-  const [trailerOpen, setTrailerOpen] = useState(false);
 
 
   useEffect(() => {
@@ -93,13 +92,6 @@ function WatchPage() {
           <p className="watch-note">This film is paid — complete the floating checkout to watch.</p>
         )}
       </section>
-
-      <PlayerModal
-        slug={trailerOpen ? slug : null}
-        title={film?.name}
-        poster={film?.image}
-        onClose={() => setTrailerOpen(false)}
-      />
 
       <PayModal
         open={payOpen}
