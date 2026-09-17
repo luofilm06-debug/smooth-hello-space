@@ -254,6 +254,7 @@ footer > p:last-child { justify-self: end; }
 @media (hover: none) {
   .project-overlay { display: flex; opacity: 1; }
   .project-actions .film-btn { opacity: 1; visibility: visible; }
+  .film-item-play { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
