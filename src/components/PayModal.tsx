@@ -41,7 +41,6 @@ export function PayModal({
       const result = await pay({ data: { slug, method } });
       if (result.ok) {
         onPaid(result.source.url);
-        onClose();
       } else {
         setError("Payment could not be completed. Please try again.");
       }
