@@ -132,7 +132,7 @@ function FilmDetail() {
                   alt={`${item.name} film still`}
                   width={900}
                   height={506}
-                  loading="lazy"
+                  loading="eager" decoding="async"
                 />
                 <span className="film-item-play"><Play size={18} /></span>
               </Link>
