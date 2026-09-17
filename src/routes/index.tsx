@@ -260,24 +260,31 @@ function Index() {
     <main id="home">
       <SiteHeader />
 
-      <section className="cover" aria-labelledby="hero-title">
-        <img
-          className="cover-image"
-          src={hassanImage.url}
-          alt="Hassan Mageye, writer, director and producer"
-          width={1600}
-          height={1000}
-        />
-        <div className="cover-inner">
-          <p className="eyebrow cover-eyebrow">Hi, I’m Hassan</p>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-image" aria-hidden="true">
+          <img
+            src={hassanImage.url}
+            alt="Hassan Mageye, writer, director and producer"
+            width={1400}
+            height={950}
+          />
+        </div>
+        <div className="hero-copy">
+          <p className="eyebrow">Hi, I’m Hassan</p>
           <h1 id="hero-title">Ugandan/American writer, director and producer.</h1>
-          <nav className="cover-menu" aria-label="Page sections">
-            {heroMenu.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
+          <p className="hero-intro">
+            Hassan Mageye is a Ugandan/American writer, director and producer whose filmmaking career
+            spans more than a decade. He studied Mass Communication at Makerere University and moved
+            from an early interest in journalism toward filmmaking.
+          </p>
+          <p className="hero-intro">
+            His work has focused on African stories, cultural identity, social themes and
+            character-driven drama. Hassan currently resides in California.
+          </p>
+          <div className="hero-actions">
+            <Link className="button button-dark" to="/films">Watch the films</Link>
+            <Link className="button button-light" to="/contact">Contact</Link>
+          </div>
         </div>
       </section>
 

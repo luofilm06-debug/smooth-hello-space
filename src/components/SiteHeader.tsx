@@ -20,6 +20,7 @@ function NavLinks() {
     <>
       <Link to="/">Home</Link>
       <Link to="/films">Movies</Link>
+      <Link to="/gallery">Gallery</Link>
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>
     </>

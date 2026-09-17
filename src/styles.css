@@ -448,3 +448,27 @@ footer > p:last-child { justify-self: end; }
   .cover-menu a { min-height: 30px; padding: 0 12px; font-size: 8px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 }
+
+/* Gallery page */
+.gallery-page-hero { padding: clamp(52px, 7vw, 92px) clamp(24px, 5.2vw, 78px) clamp(28px, 4vw, 44px); background: var(--card); }
+.gallery-page-hero h1 { margin: 8px 0 0; font-family: var(--font-display); font-size: clamp(38px, 5vw, 70px); line-height: 1.05; font-weight: 500; letter-spacing: -0.01em; }
+.gallery-page-hero p:not(.eyebrow) { max-width: 620px; margin: 20px 0 0; color: var(--muted-foreground); font-size: 14px; line-height: 1.8; }
+.gallery-page-grid { padding: 0 clamp(14px, 3vw, 34px) clamp(42px, 5vw, 72px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; background: var(--card); }
+.gallery-page-item { position: relative; margin: 0; min-height: 180px; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); background: var(--muted); }
+.gallery-page-item:nth-child(6n + 1), .gallery-page-item:nth-child(6n + 4) { grid-column: span 2; grid-row: span 2; }
+.gallery-page-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.75,.25,1); }
+.gallery-page-item figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 34px 14px 12px; color: var(--primary-foreground); font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; background: linear-gradient(to top, color-mix(in oklab, var(--foreground) 78%, transparent), transparent); }
+.gallery-page-item:hover img { transform: scale(1.05); }
+
+@media (max-width: 980px) {
+  .gallery-page-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .gallery-page-item:nth-child(6n + 1), .gallery-page-item:nth-child(6n + 4) { grid-column: span 1; grid-row: span 1; }
+}
+
+@media (max-width: 720px) {
+  .gallery-page-hero { padding: 38px 18px 24px; }
+  .gallery-page-hero p:not(.eyebrow) { font-size: 10px; line-height: 1.65; }
+  .gallery-page-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding-inline: 8px; }
+  .gallery-page-item { min-height: 0; border-radius: 8px; }
+  .gallery-page-item figcaption { padding: 28px 9px 8px; font-size: 8px; }
+}
