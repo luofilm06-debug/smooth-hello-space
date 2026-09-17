@@ -281,15 +281,15 @@ function Index() {
         </div>
       </section>
 
-      <section className="about-section" id="about" aria-labelledby="about-title">
+      <section className="home-about" id="about" aria-labelledby="about-title">
         <p className="eyebrow">About Mageye</p>
         <h2 id="about-title">African stories, told with heart.</h2>
-        <p className="about-text">
+        <p className="home-about-text">
           Hassan Mageye is a Ugandan/American writer, director and producer whose filmmaking career
           spans more than a decade. He studied Mass Communication at Makerere University and moved
           from an early interest in journalism toward filmmaking.
         </p>
-        <p className="about-text">
+        <p className="home-about-text">
           His work has focused on African stories, cultural identity, social themes and
           character-driven drama. Hassan currently resides in California.
         </p>
