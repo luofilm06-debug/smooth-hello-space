@@ -41,15 +41,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const heroMenu = [
-  { label: "About Mageye", href: "#about" },
-  { label: "Watch movies here", href: "#portfolio" },
-  { label: "Upcoming projects", href: "#upcoming" },
-  { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Media and news", href: "#media" },
-  { label: "Contact us", href: "#contact" },
-];
 
 const services = [
   {
@@ -233,25 +224,12 @@ function Index() {
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/films">Watch the films</Link>
+            <Link className="button button-light" to="/about">More about Hassan</Link>
             <Link className="button button-light" to="/contact">Contact</Link>
           </div>
         </div>
       </section>
 
-      <section className="home-about" id="about" aria-labelledby="about-title">
-        <p className="eyebrow">About Mageye</p>
-        <h2 id="about-title">African stories, told with heart.</h2>
-        <p className="home-about-text">
-          Hassan Mageye is a Ugandan/American writer, director and producer whose filmmaking career
-          spans more than a decade. He studied Mass Communication at Makerere University and moved
-          from an early interest in journalism toward filmmaking.
-        </p>
-        <p className="home-about-text">
-          His work has focused on African stories, cultural identity, social themes and
-          character-driven drama. Hassan currently resides in California.
-        </p>
-        <Link className="button button-dark" to="/about">More about Hassan</Link>
-      </section>
 
       <section className="portfolio-section" id="portfolio">
         <h2 className="portfolio-title">Watch movies here</h2>
@@ -368,7 +346,9 @@ function Index() {
             </article>
           ))}
         </div>
+        <a className="button button-dark" href="mailto:mageyeglobalworks@gmail.com">Press inquiries</a>
       </section>
+
 
       <section
         className="contact-section"
