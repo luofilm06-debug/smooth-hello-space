@@ -439,10 +439,12 @@ footer > p:last-child { justify-self: end; }
 
 .home-photo-strip { margin: 30px 0 0; width: 100%; display: grid; gap: 10px; }
 .home-photo-strip img { width: 100%; height: 100%; object-fit: cover; border-radius: calc(var(--radius) - 4px); background: var(--muted); }
-.home-photo-strip-portrait { grid-template-columns: repeat(3, 1fr); }
+.home-photo-strip-portrait { grid-template-columns: repeat(4, 1fr); }
 .home-photo-strip-portrait img { aspect-ratio: 16 / 9; }
-.home-photo-strip-wide { grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.home-photo-strip-wide img { aspect-ratio: 16 / 9; }
+.media-carousel { position: relative; }
+.home-photo-strip-wide { grid-auto-flow: column; grid-auto-columns: calc((100% - 2 * 14px) / 3); gap: 14px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.home-photo-strip-wide::-webkit-scrollbar { display: none; }
+.home-photo-strip-wide img { aspect-ratio: 16 / 9; scroll-snap-align: start; }
 
 .awards-grid { margin: 34px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
 .award-card { padding: 22px; border-radius: var(--radius); background: var(--background); text-align: left; }
@@ -484,5 +486,6 @@ footer > p:last-child { justify-self: end; }
 @media (max-width: 720px) {
   .home-photo-strip { gap: 8px; }
   .home-photo-strip-portrait { grid-template-columns: repeat(2, 1fr); }
-  .home-photo-strip-wide { grid-template-columns: repeat(2, 1fr); }
+  .home-photo-strip-wide { grid-auto-columns: calc((100% - 10px) / 1.5); gap: 10px; }
+  .media-carousel .carousel-arrow { top: 50%; width: 24px; height: 24px; }
 }
