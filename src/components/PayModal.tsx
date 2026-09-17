@@ -17,13 +17,13 @@ export function PayModal({
   open,
   slug,
   title,
-  onClose,
+  onBack,
   onPaid,
 }: {
   open: boolean;
   slug: string;
   title?: string | undefined;
-  onClose: () => void;
+  onBack: () => void;
   onPaid: (url: string) => void;
 }) {
   const [method, setMethod] = useState<Method>("card");
