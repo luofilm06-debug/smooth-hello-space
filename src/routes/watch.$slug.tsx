@@ -5,7 +5,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 import { SiteFooter, SiteHeader } from "@/components/SiteHeader";
-import { PlayerModal } from "@/components/PlayerModal";
+
 import { PayModal } from "@/components/PayModal";
 import { getFilm } from "@/lib/films";
 import { fetchTrailer } from "@/lib/streaming.functions";
