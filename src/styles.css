@@ -436,8 +436,15 @@ footer > p:last-child { justify-self: end; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.75,.25,1); }
 .gallery-item:hover img { transform: scale(1.05); }
 
+.home-photo-strip { margin: 30px auto 0; max-width: 1100px; display: grid; gap: 10px; }
+.home-photo-strip img { width: 100%; height: 100%; object-fit: cover; border-radius: calc(var(--radius) - 4px); background: var(--muted); }
+.home-photo-strip-portrait { grid-template-columns: repeat(4, 1fr); }
+.home-photo-strip-portrait img { aspect-ratio: 3 / 4; }
+.home-photo-strip-wide { grid-template-columns: repeat(4, 1fr); }
+.home-photo-strip-wide img { aspect-ratio: 16 / 10; }
+
 .awards-grid { margin: 30px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
-.award-card { padding: 18px; border-radius: var(--radius); background: var(--background); }
+.award-card { padding: 18px; border-radius: var(--radius); background: var(--background); text-align: left; }
 .award-card strong { display: block; font-size: 12px; font-weight: 600; }
 .award-card span { display: block; margin-top: 8px; color: var(--muted-foreground); font-size: 11px; line-height: 1.6; }
 
