@@ -116,29 +116,30 @@ const galleryPreview = [
   { src: upcomingSilence.url, alt: "The Silence We Flee — still" },
 ];
 
-const mediaPreview = [
-  { src: mediaEvent, alt: "Event and festival coverage" },
-  { src: mediaWalk.url, alt: "Behind the scenes — a walking shot" },
-  { src: mediaGalz.url, alt: "Galz About — film still" },
-  { src: mediaBanner, alt: "Mageye films banner" },
-];
-
-const awards = [
+const mediaCards = [
   {
+    src: mediaEvent,
+    alt: "Best Film in an Indigenous Language — Uganda Film Festival",
+    meta: "Uganda Film Festival · 2025",
     title: "Best Film in an Indigenous Language",
-    detail: "2025 Uganda Film Festival",
   },
   {
+    src: mediaWalk.url,
+    alt: "Special Mention — Mashariki African Film Festival",
+    meta: "Mashariki African Film Festival · 2025",
     title: "Special Mention",
-    detail: "2025 Mashariki African Film Festival",
   },
   {
+    src: mediaGalz.url,
+    alt: "Official selection — Silicon Valley African Film Festival",
+    meta: "Silicon Valley African Film Festival",
     title: "Official selection",
-    detail: "Silicon Valley African Film Festival",
   },
   {
+    src: mediaBanner,
+    alt: "Uganda's official submission — 98th Academy Awards",
+    meta: "98th Academy Awards",
     title: "Uganda's official submission",
-    detail: "98th Academy Awards, Best International Feature Film",
   },
 ];
 
