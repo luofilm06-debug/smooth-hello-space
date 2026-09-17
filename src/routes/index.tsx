@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import {
   BriefcaseBusiness,
@@ -19,6 +19,28 @@ import hassanImage from "@/assets/hassan-mageye.png.asset.json";
 import upcomingSilence from "@/assets/silence-we-flee.png.asset.json";
 import upcomingBullock from "@/assets/john-bullock.png.asset.json";
 import upcomingModernRoad from "@/assets/modern-road.png.asset.json";
+import directorHero from "@/assets/director-hero-2.png.asset.json";
+import behindCouple from "@/assets/behind-scene-couple.jpg.asset.json";
+import behindDirecting from "@/assets/behind-scene-directing.jpg.asset.json";
+import behindSet from "@/assets/behind-scene-set.jpg.asset.json";
+import behindTailor from "@/assets/behind-scene-tailor.jpg.asset.json";
+import behindWalk from "@/assets/behind-scene-walk.jpg.asset.json";
+import bedroomChain from "@/assets/bedroom-chain.jpg.asset.json";
+import devilsChestBanner from "@/assets/devils-chest-banner.png.asset.json";
+import devilsChestPoster from "@/assets/devils-chest-poster.jpg.asset.json";
+import galzAbout from "@/assets/galz-about.jpg.asset.json";
+import kimote from "@/assets/kimote.jpg.asset.json";
+import kingsVirgin from "@/assets/kings-virgin.jpg.asset.json";
+import tinkasStory from "@/assets/tinkas-story.jpg.asset.json";
+import filmsBanner from "@/assets/films-banner.jpg";
+import projectEvent from "@/assets/project-event.jpg";
+import projectProduct from "@/assets/project-product.jpg";
+import projectStudio from "@/assets/project-studio.jpg";
+import projectWedding from "@/assets/project-wedding.jpg";
+import upcomingLaneway from "@/assets/upcoming-laneway.jpg";
+import upcomingLongway from "@/assets/upcoming-longway.jpg";
+import upcomingSaltstone from "@/assets/upcoming-saltstone.jpg";
+import videographerHero from "@/assets/videographer-hero.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,6 +62,16 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
+const heroMenu = [
+  { label: "About Mageye", href: "#about" },
+  { label: "Watch movies here", href: "#portfolio" },
+  { label: "Upcoming projects", href: "#upcoming" },
+  { label: "Services", href: "#services" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Media and news", href: "#media" },
+  { label: "Contact us", href: "#contact" },
+];
 
 const services = [
   {
@@ -92,6 +124,53 @@ const upcomingProjects = [
   },
 ];
 
+const gallery: { src: string; alt: string }[] = [
+  { src: hassanImage.url, alt: "Hassan Mageye, writer, director and producer" },
+  { src: directorHero.url, alt: "Hassan Mageye directing on location" },
+  { src: behindDirecting.url, alt: "Behind the scenes — directing a scene" },
+  { src: behindSet.url, alt: "Behind the scenes — on set" },
+  { src: behindCouple.url, alt: "Behind the scenes — filming a couple" },
+  { src: behindTailor.url, alt: "Behind the scenes — the tailor scene" },
+  { src: behindWalk.url, alt: "Behind the scenes — a walking shot" },
+  { src: kimote.url, alt: "Kimote — film still" },
+  { src: galzAbout.url, alt: "Galz About — film still" },
+  { src: kingsVirgin.url, alt: "The King's Virgin — film still" },
+  { src: bedroomChain.url, alt: "Bedroom Chain — film still" },
+  { src: devilsChestPoster.url, alt: "Devil's Chest — poster" },
+  { src: devilsChestBanner.url, alt: "Devil's Chest — banner" },
+  { src: tinkasStory.url, alt: "Tinka's Story — film still" },
+  { src: upcomingSilence.url, alt: "The Silence We Flee — still" },
+  { src: upcomingModernRoad.url, alt: "Modern Road — still" },
+  { src: upcomingBullock.url, alt: "John Bullock — still" },
+  { src: filmsBanner, alt: "Mageye films banner" },
+  { src: videographerHero, alt: "Camera work on location" },
+  { src: projectStudio, alt: "Studio production" },
+  { src: projectEvent, alt: "Event coverage" },
+  { src: projectProduct, alt: "Product shoot" },
+  { src: projectWedding, alt: "Wedding film" },
+  { src: upcomingLaneway, alt: "Laneway — production still" },
+  { src: upcomingLongway, alt: "Longway — production still" },
+  { src: upcomingSaltstone, alt: "Saltstone — production still" },
+];
+
+const awards = [
+  {
+    title: "Best Film in an Indigenous Language",
+    detail: "2025 Uganda Film Festival",
+  },
+  {
+    title: "Special Mention",
+    detail: "2025 Mashariki African Film Festival",
+  },
+  {
+    title: "Official selection",
+    detail: "Silicon Valley African Film Festival",
+  },
+  {
+    title: "Uganda's official submission",
+    detail: "98th Academy Awards, Best International Feature Film",
+  },
+];
 
 function ProjectCard({
   project,
@@ -181,36 +260,44 @@ function Index() {
     <main id="home">
       <SiteHeader />
 
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-image" aria-hidden="true">
-          <img
-            src={hassanImage.url}
-            alt="Hassan Mageye, writer, director and producer"
-            width={1400}
-            height={950}
-          />
-        </div>
-        <div className="hero-copy">
-          <p className="eyebrow">Hi, I’m Hassan</p>
+      <section className="cover" aria-labelledby="hero-title">
+        <img
+          className="cover-image"
+          src={hassanImage.url}
+          alt="Hassan Mageye, writer, director and producer"
+          width={1600}
+          height={1000}
+        />
+        <div className="cover-inner">
+          <p className="eyebrow cover-eyebrow">Hi, I’m Hassan</p>
           <h1 id="hero-title">Ugandan/American writer, director and producer.</h1>
-          <p className="hero-intro">
-            Hassan Mageye is a Ugandan/American writer, director and producer whose filmmaking career
-            spans more than a decade. He studied Mass Communication at Makerere University and moved
-            from an early interest in journalism toward filmmaking.
-          </p>
-          <p className="hero-intro">
-            His work has focused on African stories, cultural identity, social themes and
-            character-driven drama. Hassan currently resides in California.
-          </p>
-          <div className="hero-actions">
-            <Link className="button button-dark" to="/films">Watch the films</Link>
-            <Link className="button button-light" to="/contact">Contact</Link>
-          </div>
+          <nav className="cover-menu" aria-label="Page sections">
+            {heroMenu.map((item) => (
+              <a key={item.href} href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 
+      <section className="about-section" id="about" aria-labelledby="about-title">
+        <p className="eyebrow">About Mageye</p>
+        <h2 id="about-title">African stories, told with heart.</h2>
+        <p className="about-text">
+          Hassan Mageye is a Ugandan/American writer, director and producer whose filmmaking career
+          spans more than a decade. He studied Mass Communication at Makerere University and moved
+          from an early interest in journalism toward filmmaking.
+        </p>
+        <p className="about-text">
+          His work has focused on African stories, cultural identity, social themes and
+          character-driven drama. Hassan currently resides in California.
+        </p>
+        <Link className="button button-dark" to="/about">More about Hassan</Link>
+      </section>
+
       <section className="portfolio-section" id="portfolio">
-        <h2 className="portfolio-title">Watch film here</h2>
+        <h2 className="portfolio-title">Watch movies here</h2>
         <div className="project-carousel">
           <button className="carousel-arrow carousel-arrow-left" type="button" aria-label="Previous films" onClick={() => scrollProjects(-1)}>
             <ChevronLeft size={24} />
@@ -276,42 +363,57 @@ function Index() {
         </div>
       </section>
 
-      <section className="services-section services-cards-section" id="services">
+      <section className="services-section services-intro-section" id="services">
+        <div className="services-intro">
+          <p className="eyebrow">What we do</p>
+          <h2 id="services-title">Services</h2>
+          <p className="services-lede">
+            Planning to shoot a film, documentary, commercial, music video or other production in
+            Africa or Santa Rosa, California? We can help coordinate the local support you need to
+            get your production moving.
+          </p>
+          <a className="button button-dark" href="#contact">Plan your shoot</a>
+        </div>
+      </section>
+
+      <section className="services-section services-cards-section">
         <div className="services">
           {services.map(({ icon: Icon, title, text }) => (
             <article className="service" key={title}>
               <Icon aria-hidden="true" size={30} strokeWidth={1.35} />
-              <h2>{title}</h2>
+              <h3>{title}</h3>
               <p>{text}</p>
             </article>
           ))}
         </div>
       </section>
 
-
-      <section className="services-section services-intro-section">
-        <div className="services-intro">
-          <p className="eyebrow">Production services</p>
-          <h2 id="services-title">Bring your production to life</h2>
-          <p className="services-lede">
-            Planning to shoot a film, documentary, commercial, music video or other production in
-            Africa or Santa Rosa, California? We can help coordinate the local support you need to
-            get your production moving.
-          </p>
-          <p className="services-tags">Locations &bull; Local crew &bull; Permit coordination &bull; Production support</p>
-          <a className="button button-dark" href="#contact">Plan your shoot</a>
+      <section className="gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <p className="eyebrow">In pictures</p>
+        <h2 id="gallery-title">Gallery</h2>
+        <div className="gallery-grid">
+          {gallery.map((item) => (
+            <figure className="gallery-item" key={item.src}>
+              <img src={item.src} alt={item.alt} loading="lazy" />
+            </figure>
+          ))}
         </div>
       </section>
 
-      <section className="awards-section" id="awards" aria-labelledby="awards-title">
+      <section className="awards-section" id="media" aria-labelledby="media-title">
         <p className="eyebrow">Recognition</p>
-        <h2 id="awards-title">Awards &amp; winnings</h2>
+        <h2 id="media-title">Media and news</h2>
         <p className="awards-text">
-          Selected recognition: Best Film in an Indigenous Language at the 2025 Uganda Film
-          Festival; Special Mention at the 2025 Mashariki African Film Festival; screened at the
-          Silicon Valley African Film Festival; and selected as Uganda’s official submission to the
-          98th Academy Awards for Best International Feature Film.
+          Awards and winnings from festivals across Africa and the United States.
         </p>
+        <div className="awards-grid">
+          {awards.map((award) => (
+            <article className="award-card" key={award.title}>
+              <strong>{award.title}</strong>
+              <span>{award.detail}</span>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section
