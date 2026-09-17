@@ -216,6 +216,7 @@ function ProjectCard({
 function Index() {
   const projectRailRef = useRef<HTMLDivElement>(null);
   const upcomingRailRef = useRef<HTMLDivElement>(null);
+  const mediaRailRef = useRef<HTMLDivElement>(null);
   const [activeFilm, setActiveFilm] = useState<number | null>(null);
   const [trailerSlug, setTrailerSlug] = useState<string | null>(null);
 
@@ -363,7 +364,7 @@ function Index() {
             <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
           ))}
         </div>
-        <Link className="button button-dark" to="/gallery">View the gallery</Link>
+        <Link className="button button-dark" to="/gallery">Open full gallery</Link>
       </section>
 
       <section className="awards-section" id="media" aria-labelledby="media-title">
@@ -372,10 +373,18 @@ function Index() {
         <p className="awards-text">
           Awards and winnings from festivals across Africa and the United States.
         </p>
-        <div className="home-photo-strip home-photo-strip-wide" aria-hidden="true">
-          {mediaPreview.map((photo) => (
-            <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
-          ))}
+        <div className="media-carousel">
+          <button className="carousel-arrow carousel-arrow-left" type="button" aria-label="Previous media photos" onClick={() => scrollRail(mediaRailRef.current, -1)}>
+            <ChevronLeft size={20} />
+          </button>
+          <div className="home-photo-strip home-photo-strip-wide" ref={mediaRailRef} aria-hidden="true">
+            {mediaPreview.map((photo) => (
+              <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
+            ))}
+          </div>
+          <button className="carousel-arrow carousel-arrow-right" type="button" aria-label="Next media photos" onClick={() => scrollRail(mediaRailRef.current, 1)}>
+            <ChevronRight size={20} />
+          </button>
         </div>
         <div className="awards-grid">
           {awards.map((award) => (
