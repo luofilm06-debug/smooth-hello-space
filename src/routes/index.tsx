@@ -19,6 +19,17 @@ import hassanImage from "@/assets/hassan-mageye.png.asset.json";
 import upcomingSilence from "@/assets/silence-we-flee.png.asset.json";
 import upcomingBullock from "@/assets/john-bullock.png.asset.json";
 import upcomingModernRoad from "@/assets/modern-road.png.asset.json";
+import galleryDirectorHero from "@/assets/director-hero-2.png.asset.json";
+import galleryBehindSet from "@/assets/behind-scene-set.jpg.asset.json";
+import galleryBehindDirecting from "@/assets/behind-scene-directing.jpg.asset.json";
+import galleryKimote from "@/assets/kimote.jpg.asset.json";
+import galleryKingsVirgin from "@/assets/kings-virgin.jpg.asset.json";
+import galleryPoster from "@/assets/devils-chest-poster.jpg.asset.json";
+import galleryStudio from "@/assets/project-studio.jpg";
+import mediaEvent from "@/assets/project-event.jpg";
+import mediaWalk from "@/assets/behind-scene-walk.jpg.asset.json";
+import mediaGalz from "@/assets/galz-about.jpg.asset.json";
+import mediaBanner from "@/assets/films-banner.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -93,6 +104,24 @@ const upcomingProjects = [
   },
 ];
 
+
+const galleryPreview = [
+  { src: galleryDirectorHero.url, alt: "Hassan Mageye directing on location" },
+  { src: galleryBehindSet.url, alt: "Behind the scenes — on set" },
+  { src: galleryBehindDirecting.url, alt: "Behind the scenes — directing a scene" },
+  { src: galleryKimote.url, alt: "Kimote — film still" },
+  { src: galleryKingsVirgin.url, alt: "The King's Virgin — film still" },
+  { src: galleryPoster.url, alt: "Devil's Chest — poster" },
+  { src: galleryStudio, alt: "Studio production" },
+  { src: upcomingSilence.url, alt: "The Silence We Flee — still" },
+];
+
+const mediaPreview = [
+  { src: mediaEvent, alt: "Event and festival coverage" },
+  { src: mediaWalk.url, alt: "Behind the scenes — a walking shot" },
+  { src: mediaGalz.url, alt: "Galz About — film still" },
+  { src: mediaBanner, alt: "Mageye films banner" },
+];
 
 const awards = [
   {
@@ -329,6 +358,11 @@ function Index() {
         <p className="awards-text">
           Behind-the-scenes moments, film stills and production photography.
         </p>
+        <div className="home-photo-strip home-photo-strip-portrait" aria-hidden="true">
+          {galleryPreview.map((photo) => (
+            <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
+          ))}
+        </div>
         <Link className="button button-dark" to="/gallery">View the gallery</Link>
       </section>
 
@@ -338,6 +372,11 @@ function Index() {
         <p className="awards-text">
           Awards and winnings from festivals across Africa and the United States.
         </p>
+        <div className="home-photo-strip home-photo-strip-wide" aria-hidden="true">
+          {mediaPreview.map((photo) => (
+            <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" />
+          ))}
+        </div>
         <div className="awards-grid">
           {awards.map((award) => (
             <article className="award-card" key={award.title}>
