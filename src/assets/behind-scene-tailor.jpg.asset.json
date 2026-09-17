@@ -1,11 +1,11 @@
 {
-  "asset_id": "8fb647b4-70fb-45dd-ba04-f00e94f0cbfc",
-  "content_type": "image/jpeg",
-  "created_at": "2026-09-17T09:55:00Z",
+  "version": 1,
+  "asset_id": "4d8c0e43-eca2-4188-9d6b-780f8c03a96c",
+  "project_id": "cf46eb05-b72d-411b-985f-a6080a3b6244",
+  "url": "/__l5e/assets-v1/4d8c0e43-eca2-4188-9d6b-780f8c03a96c/behind-scene-tailor.jpg",
+  "r2_key": "a/v1/cf46eb05-b72d-411b-985f-a6080a3b6244/4d8c0e43-eca2-4188-9d6b-780f8c03a96c/behind-scene-tailor.jpg",
   "original_filename": "behind-scene-tailor.jpg",
-  "project_id": "00302dbc-2ad3-476a-ad22-df563a793f0f",
-  "r2_key": "a/v1/00302dbc-2ad3-476a-ad22-df563a793f0f/8fb647b4-70fb-45dd-ba04-f00e94f0cbfc/behind-scene-tailor.jpg",
   "size": 328303,
-  "url": "/__l5e/assets-v1/8fb647b4-70fb-45dd-ba04-f00e94f0cbfc/behind-scene-tailor.jpg",
-  "version": 1
+  "content_type": "image/jpeg",
+  "created_at": "2026-09-17T17:25:26Z"
 }
