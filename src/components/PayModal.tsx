@@ -56,8 +56,8 @@ export function PayModal({
       <div className="pay-modal">
         <div className="pay-modal-head">
           <h2>Pay to watch</h2>
-          <button type="button" className="pay-close" onClick={onClose} aria-label="Close">
-            <X size={18} />
+          <button type="button" className="pay-close" onClick={onBack}>
+            <ArrowLeft size={16} /> Go back
           </button>
         </div>
 
