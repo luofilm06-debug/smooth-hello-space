@@ -55,7 +55,10 @@ function WatchPage() {
         return;
       }
 
-      if (!cancelled) setState("locked");
+      if (!cancelled) {
+        setState("locked");
+        setPayOpen(true);
+      }
     }
 
     setState("loading");
@@ -87,23 +90,7 @@ function WatchPage() {
         )}
 
         {state === "locked" && (
-          <div className="watch-gate">
-            <Lock size={22} />
-            <h2>Pay to watch</h2>
-            <p>USD 5.99 for this film. No account needed. Trailers stay free.</p>
-            <div className="watch-gate-actions">
-              <button className="pay-button" type="button" onClick={() => setPayOpen(true)}>
-                Pay to watch
-              </button>
-              <button
-                className="film-btn film-btn-ghost"
-                type="button"
-                onClick={() => setTrailerOpen(true)}
-              >
-                Watch trailer free
-              </button>
-            </div>
-          </div>
+          <p className="watch-note">This film is paid — complete the floating checkout to watch.</p>
         )}
       </section>
 
