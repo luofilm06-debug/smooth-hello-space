@@ -497,8 +497,9 @@ footer > p:last-child { justify-self: end; }
 }
 
 @media (max-width: 720px) {
-  .home-photo-strip { gap: 8px; }
+  .home-photo-strip { gap: 10px; }
   .home-photo-strip-portrait { grid-template-columns: repeat(2, 1fr); }
+  .home-photo-strip-portrait img { aspect-ratio: 1 / 1; }
   .home-photo-strip-wide { grid-auto-columns: calc((100% - 10px) / 1.5); gap: 10px; }
   .media-carousel .carousel-arrow { top: 50%; width: 24px; height: 24px; }
 }
