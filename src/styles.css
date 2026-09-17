@@ -176,7 +176,7 @@ footer > p:last-child { justify-self: end; }
 @media (max-width: 1050px) {
   .site-header { grid-template-columns: 1fr auto; }
   .desktop-nav, .header-cta { display: none; }
-  .mobile-nav { display: block; }
+  .nav-toggle { display: inline-flex; }
   .hero { min-height: 650px; }
   .project-grid { grid-auto-columns: calc((100% - 2 * 14px) / 3.4); }
 }
