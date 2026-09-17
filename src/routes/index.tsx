@@ -20,27 +20,6 @@ import upcomingSilence from "@/assets/silence-we-flee.png.asset.json";
 import upcomingBullock from "@/assets/john-bullock.png.asset.json";
 import upcomingModernRoad from "@/assets/modern-road.png.asset.json";
 import directorHero from "@/assets/director-hero-2.png.asset.json";
-import behindCouple from "@/assets/behind-scene-couple.jpg.asset.json";
-import behindDirecting from "@/assets/behind-scene-directing.jpg.asset.json";
-import behindSet from "@/assets/behind-scene-set.jpg.asset.json";
-import behindTailor from "@/assets/behind-scene-tailor.jpg.asset.json";
-import behindWalk from "@/assets/behind-scene-walk.jpg.asset.json";
-import bedroomChain from "@/assets/bedroom-chain.jpg.asset.json";
-import devilsChestBanner from "@/assets/devils-chest-banner.png.asset.json";
-import devilsChestPoster from "@/assets/devils-chest-poster.jpg.asset.json";
-import galzAbout from "@/assets/galz-about.jpg.asset.json";
-import kimote from "@/assets/kimote.jpg.asset.json";
-import kingsVirgin from "@/assets/kings-virgin.jpg.asset.json";
-import tinkasStory from "@/assets/tinkas-story.jpg.asset.json";
-import filmsBanner from "@/assets/films-banner.jpg";
-import projectEvent from "@/assets/project-event.jpg";
-import projectProduct from "@/assets/project-product.jpg";
-import projectStudio from "@/assets/project-studio.jpg";
-import projectWedding from "@/assets/project-wedding.jpg";
-import upcomingLaneway from "@/assets/upcoming-laneway.jpg";
-import upcomingLongway from "@/assets/upcoming-longway.jpg";
-import upcomingSaltstone from "@/assets/upcoming-saltstone.jpg";
-import videographerHero from "@/assets/videographer-hero.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -124,34 +103,6 @@ const upcomingProjects = [
   },
 ];
 
-const gallery: { src: string; alt: string }[] = [
-  { src: hassanImage.url, alt: "Hassan Mageye, writer, director and producer" },
-  { src: directorHero.url, alt: "Hassan Mageye directing on location" },
-  { src: behindDirecting.url, alt: "Behind the scenes — directing a scene" },
-  { src: behindSet.url, alt: "Behind the scenes — on set" },
-  { src: behindCouple.url, alt: "Behind the scenes — filming a couple" },
-  { src: behindTailor.url, alt: "Behind the scenes — the tailor scene" },
-  { src: behindWalk.url, alt: "Behind the scenes — a walking shot" },
-  { src: kimote.url, alt: "Kimote — film still" },
-  { src: galzAbout.url, alt: "Galz About — film still" },
-  { src: kingsVirgin.url, alt: "The King's Virgin — film still" },
-  { src: bedroomChain.url, alt: "Bedroom Chain — film still" },
-  { src: devilsChestPoster.url, alt: "Devil's Chest — poster" },
-  { src: devilsChestBanner.url, alt: "Devil's Chest — banner" },
-  { src: tinkasStory.url, alt: "Tinka's Story — film still" },
-  { src: upcomingSilence.url, alt: "The Silence We Flee — still" },
-  { src: upcomingModernRoad.url, alt: "Modern Road — still" },
-  { src: upcomingBullock.url, alt: "John Bullock — still" },
-  { src: filmsBanner, alt: "Mageye films banner" },
-  { src: videographerHero, alt: "Camera work on location" },
-  { src: projectStudio, alt: "Studio production" },
-  { src: projectEvent, alt: "Event coverage" },
-  { src: projectProduct, alt: "Product shoot" },
-  { src: projectWedding, alt: "Wedding film" },
-  { src: upcomingLaneway, alt: "Laneway — production still" },
-  { src: upcomingLongway, alt: "Longway — production still" },
-  { src: upcomingSaltstone, alt: "Saltstone — production still" },
-];
 
 const awards = [
   {
