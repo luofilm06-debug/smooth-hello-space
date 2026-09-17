@@ -479,3 +479,9 @@ footer > p:last-child { justify-self: end; }
   .gallery-page-item { min-height: 0; border-radius: 8px; }
   .gallery-page-item figcaption { padding: 28px 9px 8px; font-size: 8px; }
 }
+
+@media (max-width: 720px) {
+  .home-photo-strip { gap: 8px; }
+  .home-photo-strip-portrait { grid-template-columns: repeat(2, 1fr); }
+  .home-photo-strip-wide { grid-template-columns: repeat(2, 1fr); }
+}
