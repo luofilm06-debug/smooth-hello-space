@@ -6,10 +6,9 @@ import { z } from "zod";
 
 import { SiteFooter, SiteHeader } from "@/components/SiteHeader";
 import { PlayerModal } from "@/components/PlayerModal";
-import { SubscribeModal } from "@/components/SubscribeModal";
-import { useAuth } from "@/hooks/useAuth";
+import { PayModal } from "@/components/PayModal";
 import { getFilm } from "@/lib/films";
-import { fetchFilmStream, fetchTrailer } from "@/lib/streaming.functions";
+import { fetchTrailer } from "@/lib/streaming.functions";
 
 const ShakaPlayer = lazy(() => import("@/components/ShakaPlayer"));
 
@@ -19,9 +18,9 @@ export const Route = createFileRoute("/watch/$slug")({
   head: () => ({
     meta: [
       { title: "Watch | Mageye Streaming" },
-      { name: "description", content: "Stream Mageye films. Trailers free, full films with a membership." },
+      { name: "description", content: "Stream Mageye films. Trailers are free, pay once to watch a full film." },
       { property: "og:title", content: "Watch | Mageye Streaming" },
-      { property: "og:description", content: "Stream Mageye films. Trailers free, full films with a membership." },
+      { property: "og:description", content: "Stream Mageye films. Trailers are free, pay once to watch a full film." },
       { property: "og:type", content: "video.movie" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
@@ -34,16 +33,14 @@ function WatchPage() {
   const { slug } = Route.useParams();
   const { kind } = Route.useSearch();
   const film = getFilm(slug);
-  const { session, loading } = useAuth();
 
   const trailer = useServerFn(fetchTrailer);
-  const filmStream = useServerFn(fetchFilmStream);
 
   const [src, setSrc] = useState<string | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "locked">("loading");
   const [payOpen, setPayOpen] = useState(false);
   const [trailerOpen, setTrailerOpen] = useState(false);
-  const [reload, setReload] = useState(0);
+
 
   useEffect(() => {
     let cancelled = false;
@@ -58,28 +55,16 @@ function WatchPage() {
         return;
       }
 
-      if (loading) return;
-      if (!session) {
-        setState("locked");
-        return;
-      }
-
-      const result = await filmStream({ data: { slug } });
-      if (cancelled) return;
-      if (result.allowed) {
-        setSrc(result.source.url);
-        setState("ready");
-      } else {
-        setState("locked");
-      }
+      if (!cancelled) setState("locked");
     }
 
     setState("loading");
+    setSrc(null);
     run().catch(() => !cancelled && setState("locked"));
     return () => {
       cancelled = true;
     };
-  }, [slug, kind, session, loading, reload]);
+  }, [slug, kind]);
 
   return (
     <main>
@@ -104,11 +89,11 @@ function WatchPage() {
         {state === "locked" && (
           <div className="watch-gate">
             <Lock size={22} />
-            <h2>Membership required</h2>
-            <p>USD 5.99 a month for every Mageye film. Trailers stay free.</p>
+            <h2>Pay to watch</h2>
+            <p>USD 5.99 for this film. No account needed. Trailers stay free.</p>
             <div className="watch-gate-actions">
               <button className="pay-button" type="button" onClick={() => setPayOpen(true)}>
-                Subscribe to watch
+                Pay to watch
               </button>
               <button
                 className="film-btn film-btn-ghost"
@@ -129,10 +114,15 @@ function WatchPage() {
         onClose={() => setTrailerOpen(false)}
       />
 
-      <SubscribeModal
+      <PayModal
         open={payOpen}
+        slug={slug}
+        title={film?.name}
         onClose={() => setPayOpen(false)}
-        onSuccess={() => setReload((value) => value + 1)}
+        onPaid={(url) => {
+          setSrc(url);
+          setState("ready");
+        }}
       />
       <SiteFooter />
     </main>

@@ -55,6 +55,24 @@ export const fetchFilmStream = createServerFn({ method: "POST" })
     return { allowed: true as const, source: { url: `/api/public/stream/${token}`, type: "mp4" as const } };
   });
 
+export const payForFilm = createServerFn({ method: "POST" })
+  .inputValidator((data: unknown) =>
+    z
+      .object({
+        slug: z.string().min(1),
+        method: z.enum(["mobile_money", "card", "paypal", "google_pay"]),
+      })
+      .parse(data),
+  )
+  .handler(async ({ data }) => {
+    const { signPlaybackToken } = await import("./stream-token.server");
+    const token = await signPlaybackToken({ slug: data.slug, kind: "film" }, 60 * 60 * 24);
+    return {
+      ok: true as const,
+      source: { url: `/api/public/stream/${token}`, type: "mp4" as const },
+    };
+  });
+
 export const startSubscription = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((data: unknown) =>
