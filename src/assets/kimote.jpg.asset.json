@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "a7159c3c-30ea-4cad-90dc-2fa55a002acf",
-  "project_id": "cf46eb05-b72d-411b-985f-a6080a3b6244",
-  "url": "/__l5e/assets-v1/a7159c3c-30ea-4cad-90dc-2fa55a002acf/kimote.jpg",
-  "r2_key": "a/v1/cf46eb05-b72d-411b-985f-a6080a3b6244/a7159c3c-30ea-4cad-90dc-2fa55a002acf/kimote.jpg",
-  "original_filename": "kimote.jpg",
-  "size": 184564,
   "content_type": "image/jpeg",
-  "created_at": "2026-09-17T17:25:55Z"
+  "created_at": "2026-09-17T17:25:55Z",
+  "original_filename": "kimote.jpg",
+  "project_id": "3fe1e214-d9d7-4cc6-a092-c350dd264055",
+  "r2_key": "a/v1/3fe1e214-d9d7-4cc6-a092-c350dd264055/a7159c3c-30ea-4cad-90dc-2fa55a002acf/kimote.jpg",
+  "size": 184564,
+  "url": "/__l5e/assets-v1/a7159c3c-30ea-4cad-90dc-2fa55a002acf/kimote.jpg",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "7c14553d-b460-4432-ad97-a697d471c45b",
-  "project_id": "cf46eb05-b72d-411b-985f-a6080a3b6244",
-  "url": "/__l5e/assets-v1/7c14553d-b460-4432-ad97-a697d471c45b/hassan-mageye-coming-soon.avif",
-  "r2_key": "a/v1/cf46eb05-b72d-411b-985f-a6080a3b6244/7c14553d-b460-4432-ad97-a697d471c45b/hassan-mageye-coming-soon.avif",
-  "original_filename": "hassan-mageye-coming-soon.avif",
-  "size": 18984,
   "content_type": "image/avif",
-  "created_at": "2026-09-17T17:25:44Z"
+  "created_at": "2026-09-17T17:25:44Z",
+  "original_filename": "hassan-mageye-coming-soon.avif",
+  "project_id": "3fe1e214-d9d7-4cc6-a092-c350dd264055",
+  "r2_key": "a/v1/3fe1e214-d9d7-4cc6-a092-c350dd264055/7c14553d-b460-4432-ad97-a697d471c45b/hassan-mageye-coming-soon.avif",
+  "size": 18984,
+  "url": "/__l5e/assets-v1/7c14553d-b460-4432-ad97-a697d471c45b/hassan-mageye-coming-soon.avif",
+  "version": 1
 }
