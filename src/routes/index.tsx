@@ -15,7 +15,7 @@ import { PlayerModal } from "@/components/PlayerModal";
 import { films, getFilm } from "@/lib/films";
 
 import contactBackground from "@/assets/hassan-mageye-coming-soon.avif.asset.json";
-import hassanImage from "@/assets/hassan-mageye.png.asset.json";
+import directorHeroImage from "@/assets/director-hero.png.asset.json";
 import upcomingSilence from "@/assets/silence-we-flee.png.asset.json";
 import upcomingBullock from "@/assets/john-bullock.png.asset.json";
 import upcomingModernRoad from "@/assets/modern-road.png.asset.json";
