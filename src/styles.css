@@ -79,8 +79,8 @@ img { display: block; max-width: 100%; }
 .mobile-menu.open nav a:nth-child(5) { transition-delay: .25s; }
 .mobile-menu nav a.active { color: #6db3e8; }
 
-.hero { min-height: 610px; position: relative; overflow: hidden; display: flex; align-items: center; background: var(--background); }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(90deg, transparent 0%, transparent 40%, var(--background) 58%, var(--background) 100%); }
+.hero { min-height: 640px; position: relative; overflow: hidden; display: flex; align-items: center; background: #0b1a26; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(8,18,28,0.78) 0%, rgba(8,18,28,0.52) 45%, rgba(8,18,28,0.86) 100%); }
 .hero-image { position: absolute; inset: 0 50% 0 0; }
 .hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; opacity: 1; filter: grayscale(75%) contrast(1.02) brightness(1.01); }
 .hero-image img.is-active { opacity: 1; }
