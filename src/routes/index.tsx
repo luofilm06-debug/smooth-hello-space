@@ -234,14 +234,14 @@ function Index() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-image" aria-hidden="true">
           <img
-            src={hassanImage.url}
+            src={directorHeroImage.url}
             alt="Hassan Mageye, writer, director and producer"
             width={1400}
             height={950}
           />
         </div>
         <div className="hero-copy">
-          <p className="eyebrow">Hi, I’m Hassan</p>
+          <p className="eyebrow hero-name">Hassan Mageye</p>
           <h1 id="hero-title">Ugandan/American writer, director and producer.</h1>
           <p className="hero-intro">
             Hassan Mageye is a Ugandan/American writer, director and producer whose filmmaking career
