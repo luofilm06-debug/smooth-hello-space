@@ -81,7 +81,7 @@ img { display: block; max-width: 100%; }
 
 .hero { min-height: 640px; position: relative; overflow: hidden; display: flex; align-items: center; background: #0b1a26; }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(8,18,28,0.78) 0%, rgba(8,18,28,0.52) 45%, rgba(8,18,28,0.86) 100%); }
-.hero-image { position: absolute; inset: 0 50% 0 0; }
+.hero-image { position: absolute; inset: 0; z-index: 1; }
 .hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; opacity: 1; filter: grayscale(75%) contrast(1.02) brightness(1.01); }
 .hero-image img.is-active { opacity: 1; }
 .hero-copy { width: 50%; position: relative; z-index: 3; padding: 42px clamp(24px, 5.2vw, 78px) 36px 0; margin-left: auto; }
